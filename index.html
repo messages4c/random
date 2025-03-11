@@ -14,7 +14,7 @@
             text-transform: uppercase;
         }
         .small-text {
-            font-size: 8px;
+            font-size: 10px;
         }
     </style>
 </head>
@@ -44,8 +44,18 @@
     </div>
 
     <script>
-      document.getElementById("last-updated").textContent =
-        "Page last uploaded: " + document.lastModified;
+      let lastModifiedDate = new Date(document.lastModified);
+      let formattedLastModified = lastModifiedDate.toLocaleString("en-US", {
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      });
+      document.getElementById("last-updated").textContent = 
+        "Page last uploaded: " + formattedLastModified;
+
       function updateTimes() {
         let est = new Date().toLocaleString("en-US", {
           timeZone: "America/New_York",
@@ -58,6 +68,7 @@
         });
         document.getElementById("current-est").textContent =
           "Current time in est: " + est;
+
         let ger = new Date().toLocaleString("en-US", {
           timeZone: "Europe/Berlin",
           hour12: false,
@@ -70,6 +81,7 @@
         document.getElementById("current-germany").textContent =
           "Current time in planet69: " + ger;
       }
+
       updateTimes();
       setInterval(updateTimes, 1000);
     </script>
