@@ -13,6 +13,9 @@
             font-size: 10px;
             text-transform: uppercase;
         }
+        .small-text {
+            font-size: 8px;
+        }
     </style>
 </head>
 <body>
@@ -34,52 +37,41 @@
         Your browser does not support the audio element.
     </audio>
 
-    <p id="last-updated">Page last updated: Loading...</p>
-    <p id="current-est"></p>
-    <p id="current-germany"></p>
+    <div class="small-text">
+        <p id="last-updated"></p>
+        <p id="current-est"></p>
+        <p id="current-germany"></p>
+    </div>
 
     <script>
-      const options = {
-        hour12: false,
-        hour: "2-digit",
-        minute: "2-digit",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit"
-      };
-      const estTime = new Date().toLocaleString("en-US", {
-        ...options,
-        timeZone: "America/New_York"
-      });
-      document.getElementById("current-est").textContent =
-        "Current time in EST: " + estTime;
-      const germanyTime = new Date().toLocaleString("en-US", {
-        ...options,
-        timeZone: "Europe/Berlin"
-      });
-      document.getElementById("current-germany").textContent =
-        "Current time in Planet69: " + germanyTime;
-      fetch("https://api.github.com/repos/messages4c/random/commits?path=index.html&sha=main")
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(response.status);
-          }
-          return response.json();
-        })
-        .then(data => {
-          if (!Array.isArray(data) || data.length === 0) {
-            throw new Error("No commits found.");
-          }
-          const commitDate = new Date(data[0].commit.author.date);
-          const formatted = commitDate.toLocaleString("en-US", options);
-          document.getElementById("last-updated").textContent =
-            "Page last updated: " + formatted;
-        })
-        .catch(err => {
-          console.error(err);
-          document.getElementById("last-updated").textContent =
-            "Page last updated: (unavailable)";
+      document.getElementById("last-updated").textContent =
+        "Page last uploaded: " + document.lastModified;
+      function updateTimes() {
+        let est = new Date().toLocaleString("en-US", {
+          timeZone: "America/New_York",
+          hour12: false,
+          hour: "2-digit",
+          minute: "2-digit",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit"
         });
+        document.getElementById("current-est").textContent =
+          "Current time in est: " + est;
+        let ger = new Date().toLocaleString("en-US", {
+          timeZone: "Europe/Berlin",
+          hour12: false,
+          hour: "2-digit",
+          minute: "2-digit",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit"
+        });
+        document.getElementById("current-germany").textContent =
+          "Current time in planet69: " + ger;
+      }
+      updateTimes();
+      setInterval(updateTimes, 1000);
     </script>
 </body>
 </html>
