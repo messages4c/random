@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>To Waldo</title>
+    <style>
+        @font-face {
+            font-family: 'Gilroy-Light';
+            src: url('Gilroy-Light.ttf') format('truetype');
+        }
+        body {
+            font-family: 'Gilroy-Light', sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <h1>Did you listen to this MP3, mister sir baby?</h1>
+    <audio controls>
+        <source src="voicemail.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h1>Tuesday 01:30am</h1>
+    <audio controls>
+        <source src="voicemail2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h1>Tuesday 02:00am</h1>
+    <audio controls>
+        <source src="voicemail3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <p id="last-updated">Page last updated: Loading...</p>
+    <p id="current-est"></p>
+    <p id="current-germany"></p>
+
+    <script>
+      const options = {
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      };
+      const estTime = new Date().toLocaleString("en-US", {
+        ...options,
+        timeZone: "America/New_York"
+      });
+      document.getElementById("current-est").textContent =
+        "Current time in EST: " + estTime;
+      const germanyTime = new Date().toLocaleString("en-US", {
+        ...options,
+        timeZone: "Europe/Berlin"
+      });
+      document.getElementById("current-germany").textContent =
+        "Current time in Planet69: " + germanyTime;
+      fetch("https://api.github.com/repos/messages4c/waldo/commits?path=index.html&sha=main")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(response.status);
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (!Array.isArray(data) || data.length === 0) {
+            throw new Error("No commits found.");
+          }
+          const commitDate = new Date(data[0].commit.author.date);
+          const formatted = commitDate.toLocaleString("en-US", options);
+          document.getElementById("last-updated").textContent =
+            "Page last updated: " + formatted;
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("last-updated").textContent =
+            "Page last updated: (unavailable)";
+        });
+    </script>
+</body>
+</html>
