@@ -1,0 +1,28 @@
+name: Build
+
+# 1) Tell GitHub when to run this workflow.
+#    "push" means whenever you push code to the main branch.
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 2) Check out your repo’s code so we can work with it
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      # 3) Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # 4) Run your "fetchCommits.js" script
+      - name: Fetch commit data
+        run: node scripts/fetchCommits.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
