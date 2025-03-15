@@ -20,7 +20,13 @@
 </head>
 <body>
 
-    <h1>Saturday 02:15am Good night...</h1>
+    <div class="small-text">
+        <p id="last-updated"></p>
+        <p id="current-est"></p>
+        <p id="current-germany"></p>
+    </div>
+
+    <h1 style="color: #FE5BAC;">Saturday 02:15am Good night...</h1>
     <audio controls>
         <source src="voicemail13.mp3" type="audio/mpeg">
     </audio>
@@ -84,12 +90,6 @@
     <audio controls>
         <source src="voicemail.mp3" type="audio/mpeg">
     </audio>
-
-    <div class="small-text">
-        <p id="last-updated"></p>
-        <p id="current-est"></p>
-        <p id="current-germany"></p>
-    </div>
 
     <script>
       let lastModifiedDate = new Date(document.lastModified);
