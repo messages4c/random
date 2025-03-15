@@ -1,99 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>💌 To Waldo</title>
-    <style>
-        @font-face {
-            font-family: 'Gilroy-Light';
-            src: url('Gilroy-Light.ttf') format('truetype');
-        }
-        body {
-            font-family: 'Gilroy-Light', sans-serif;
-            font-size: 10px;
-            text-transform: uppercase;
-        }
-        .small-text {
-            font-size: 10px;
-        }
-    </style>
+  <meta charset="utf-8">
+
+ 
+  <link rel="icon" 
+        type="image/png" 
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACYUlEQVRYCe2Xf0jbUBjHf3gaAR0MDNGmDKzDGPOEJIzS4x2CzC9phUyCxaCSNs66UjsZMPB0mnLmmJKUyENNRg5tkAfpqJ+hgIJ+g6d3d/r599+0feey85iN3lCpy/od8Zc/iLF2q7divaf6svVDLU/cNIO36orXTZbrAM/ACNxtetvSGzXM45iEA2Paec/pdrOJk8+73ehEsvk2yBf2Eum4Z106ay1eNw/o0jPsIrkuH0bH4QbnlhqyQiDoHkVI2Yrg8XuWez00nzDUbEkrGxdEafwrcEVHsztRQLc7/nlBPwFgIsf6rlfH65cq1++CJ2Kfhv/fFYvK8F+wedF4C4OB7B43ExxQnF/SMCccOb0niRPic42HgAPf8hArnxXlYG6BaTpsYfZ/G8lRDmwDtaU9K5CBoFRmtNiNiCIAtBAuClpCstt8mXR2WcYPB1vCuFtv1gex0/3zDuQwAECwoEa8Sph2EGdK/tH9o3wZ97z1sUZlLKarSzhAfCnsE6K8Sdi2dXexBPgD4/LsztIFmEV5ResFFi8cy8I2LlfD6hEwSY2ZOWFNos6nzUwIIYsAIcgVXTAqmgE86bTKmaZ32rQ9FqNzfLp5emVRf0f8vUSfKL8oa6cz8dB41X0zK2RQfQwEQRNKfXq+9tTo9p2za8FoulcI4SykemOxMKEGzBW1bpZwqpXpk3vAtQJ+AY8AnpSMRniFlsAP37zKkjxkOl78vGSCHYiocF+O+yFslFJs+Cc8L7gYPl23MU8eMTz/Oe/4Lr9Ds8bnDEu+P7kAAAAASUVORK5CYII=">
+
+  <title>To Waldo</title>
+
+  <style>
+    @font-face {
+        font-family: 'Gilroy-Light';
+        src: url('Gilroy-Light.ttf') format('truetype');
+    }
+    body {
+        font-family: 'Gilroy-Light', sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+    .small-text {
+        font-size: 10px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="small-text">
-        <p id="last-updated"></p>
-        <p id="current-est"></p>
-        <p id="current-germany"></p>
-    </div>
+  <div class="small-text">
+      <p id="last-updated"></p>
+      <p id="current-est"></p>
+      <p id="current-germany"></p>
+  </div>
 
-    <h1 style="color: #FE5BAC;">Saturday 02:15am Good night...</h1>
-    <audio controls>
-        <source src="voicemail13.mp3" type="audio/mpeg">
-    </audio>
+  <h1 style="color: #FE5BAC;">Saturday 02:15am Good night...</h1>
+  <audio controls>
+      <source src="voicemail13.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Friday 01:30am Not An Apocalypse...</h1>
-    <audio controls>
-        <source src="voicemail12.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Friday 01:30am Not An Apocalypse...</h1>
+  <audio controls>
+      <source src="voicemail12.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Friday 01:20am Apocalypse II...</h1>
-    <audio controls>
-        <source src="voicemail11.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Friday 01:20am Apocalypse II...</h1>
+  <audio controls>
+      <source src="voicemail11.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Wednesday 08:05am Apocalypse...</h1>
-    <audio controls>
-        <source src="voicemail10.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Wednesday 08:05am Apocalypse...</h1>
+  <audio controls>
+      <source src="voicemail10.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Wednesday 05:50am Audible Philosophy...</h1>
-    <audio controls>
-        <source src="voicemail9.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Wednesday 05:50am Audible Philosophy...</h1>
+  <audio controls>
+      <source src="voicemail9.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Wednesday 00:10am Does it help...</h1>
-    <audio controls>
-        <source src="voicemail8.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Wednesday 00:10am Does it help...</h1>
+  <audio controls>
+      <source src="voicemail8.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Tuesday 09:50pm As time goes by...</h1>
-    <audio controls>
-        <source src="voicemail7.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Tuesday 09:50pm As time goes by...</h1>
+  <audio controls>
+      <source src="voicemail7.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Tuesday 07:40am Are you gonna</h1>
-    <audio controls>
-        <source src="voicemail6.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Tuesday 07:40am Are you gonna</h1>
+  <audio controls>
+      <source src="voicemail6.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Tuesday 07:20am Alien Words</h1>
-    <audio controls>
-        <source src="voicemail5.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Tuesday 07:20am Alien Words</h1>
+  <audio controls>
+      <source src="voicemail5.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Tuesday 06:50am Good morning message</h1>
-    <audio controls>
-        <source src="voicemail4.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Tuesday 06:50am Good morning message</h1>
+  <audio controls>
+      <source src="voicemail4.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Tuesday 02:00am</h1>
-    <audio controls>
-        <source src="voicemail3.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Tuesday 02:00am</h1>
+  <audio controls>
+      <source src="voicemail3.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Tuesday 01:30am</h1>
-    <audio controls>
-        <source src="voicemail2.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Tuesday 01:30am</h1>
+  <audio controls>
+      <source src="voicemail2.mp3" type="audio/mpeg">
+  </audio>
 
-    <h1>Did you listen to this MP3, mister sir baby?</h1>
-    <audio controls>
-        <source src="voicemail.mp3" type="audio/mpeg">
-    </audio>
+  <h1>Did you listen to this MP3, mister sir baby?</h1>
+  <audio controls>
+      <source src="voicemail.mp3" type="audio/mpeg">
+  </audio>
 
-    <script>
-      let lastModifiedDate = new Date(document.lastModified);
-      let formattedLastModified = lastModifiedDate.toLocaleString("en-US", {
+  <script>
+    let lastModifiedDate = new Date(document.lastModified);
+    let formattedLastModified = lastModifiedDate.toLocaleString("en-US", {
+      hour12: false,
+      hour: "2-digit",
+      minute: "2-digit",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    });
+    document.getElementById("last-updated").textContent =
+      "Page last uploaded: " + formattedLastModified;
+
+    function updateTimes() {
+      let est = new Date().toLocaleString("en-US", {
+        timeZone: "America/New_York",
         hour12: false,
         hour: "2-digit",
         minute: "2-digit",
@@ -101,37 +121,24 @@
         month: "2-digit",
         day: "2-digit"
       });
-      document.getElementById("last-updated").textContent = 
-        "Page last uploaded: " + formattedLastModified;
+      document.getElementById("current-est").textContent =
+        "Current time in est: " + est;
 
-      function updateTimes() {
-        let est = new Date().toLocaleString("en-US", {
-          timeZone: "America/New_York",
-          hour12: false,
-          hour: "2-digit",
-          minute: "2-digit",
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit"
-        });
-        document.getElementById("current-est").textContent =
-          "Current time in est: " + est;
+      let ger = new Date().toLocaleString("en-US", {
+        timeZone: "Europe/Berlin",
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      });
+      document.getElementById("current-germany").textContent =
+        "Current time on planet69: " + ger;
+    }
 
-        let ger = new Date().toLocaleString("en-US", {
-          timeZone: "Europe/Berlin",
-          hour12: false,
-          hour: "2-digit",
-          minute: "2-digit",
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit"
-        });
-        document.getElementById("current-germany").textContent =
-          "Current time on planet69: " + ger;
-      }
-
-      updateTimes();
-      setInterval(updateTimes, 1000);
-    </script>
+    updateTimes();
+    setInterval(updateTimes, 1000);
+  </script>
 </body>
 </html>
